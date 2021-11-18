@@ -550,6 +550,7 @@ DEPENDENCIES
   opentelemetry-shopify!
   puma (~> 5.0)
   rails (= 7.0.0.alpha2)
+  redis (~> 4.0)
   rubocop-lsp
   rubocop-shopify
   selenium-webdriver
