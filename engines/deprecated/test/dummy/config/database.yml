@@ -15,24 +15,19 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password:
-  host: target.railgun
+  host: deprecated.railgun
 
 development:
-  primary:
-    <<: *default
-    database: target_development
-  deprecated:
-    <<: *default
-    host: deprecated.railgun
-    database: deprecated_development
+  <<: *default
+  database: deprecated_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  primary:
+  deprecated:
     <<: *default
-    database: target_test
+    database: deprecated_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -56,6 +51,6 @@ test:
 #
 production:
   <<: *default
-  database: target_production
-  username: target
-  password: <%= ENV["TARGET_DATABASE_PASSWORD"] %>
+  database: deprecated_production
+  username: deprecated
+  password: <%= ENV["DEPRECATED_DATABASE_PASSWORD"] %>

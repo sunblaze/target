@@ -1,7 +1,8 @@
-# frozen_string_literal: true
-
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+# Specify your gem's dependencies in deprecated.gemspec.
+gemspec
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem "rails", "7.0.0.alpha2"
@@ -65,5 +66,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
-gem 'deprecated', path: 'engines/deprecated'
